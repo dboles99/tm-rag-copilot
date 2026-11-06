@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="rchart rchart-root" xmlns="http://www.w3.org/2000/svg" width="780" height="400" viewBox="0 0 780 400" role="img" aria-label="recall@k by configuration">
+<style>
+.rchart-root { --cbg: #ffffff; --cink: #3c4148; --cgrid: #e8eaee; --cline: #c6ccd4; }
+@media (prefers-color-scheme: dark) {
+  .rchart-root { --cbg: #1e2126; --cink: #d7dbe0; --cgrid: #2a2f36; --cline: #4a5058; }
+}
+.rchart text { font-family: -apple-system, "Segoe UI", Roboto, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 12px; fill: var(--cink); }
+.rchart .bg { fill: var(--cbg); }
+.rchart .grid { stroke: var(--cgrid); stroke-width: 1; }
+.rchart .axis { stroke: var(--cline); stroke-width: 1; }
+.rchart .series-label { font-size: 12px; font-weight: 600; }
+</style>
+<rect class="bg" x="0" y="0" width="780" height="400" rx="10"/>
+<line class="grid" x1="48" y1="360.0" x2="612" y2="360.0"/>
+<text x="40" y="364.0" text-anchor="end">0.0</text>
+<line class="grid" x1="48" y1="292.8" x2="612" y2="292.8"/>
+<text x="40" y="296.8" text-anchor="end">0.2</text>
+<line class="grid" x1="48" y1="225.6" x2="612" y2="225.6"/>
+<text x="40" y="229.6" text-anchor="end">0.4</text>
+<line class="grid" x1="48" y1="158.4" x2="612" y2="158.4"/>
+<text x="40" y="162.4" text-anchor="end">0.6</text>
+<line class="grid" x1="48" y1="91.2" x2="612" y2="91.2"/>
+<text x="40" y="95.2" text-anchor="end">0.8</text>
+<line class="grid" x1="48" y1="24.0" x2="612" y2="24.0"/>
+<text x="40" y="28.0" text-anchor="end">1.0</text>
+<line class="grid" x1="48.0" y1="24" x2="48.0" y2="360"/>
+<text x="48.0" y="378" text-anchor="middle">k=1</text>
+<line class="grid" x1="173.3" y1="24" x2="173.3" y2="360"/>
+<text x="173.3" y="378" text-anchor="middle">k=3</text>
+<line class="grid" x1="298.7" y1="24" x2="298.7" y2="360"/>
+<text x="298.7" y="378" text-anchor="middle">k=5</text>
+<line class="grid" x1="612.0" y1="24" x2="612.0" y2="360"/>
+<text x="612.0" y="378" text-anchor="middle">k=10</text>
+<line class="axis" x1="48" y1="360" x2="612" y2="360"/>
+<line class="axis" x1="48" y1="24" x2="48" y2="360"/>
+<text x="48" y="16">recall@k</text>
+<polyline fill="none" stroke="#7d8aa0" stroke-width="2.2" points="48.0,187.9 173.3,130.5 298.7,114.1 612.0,89.6"/>
+<circle cx="48.0" cy="187.9" r="3" fill="#7d8aa0"/>
+<circle cx="173.3" cy="130.5" r="3" fill="#7d8aa0"/>
+<circle cx="298.7" cy="114.1" r="3" fill="#7d8aa0"/>
+<circle cx="612.0" cy="89.6" r="3" fill="#7d8aa0"/>
+<polyline fill="none" stroke="#5b8a72" stroke-width="2.2" points="48.0,179.7 173.3,171.5 298.7,155.1 612.0,138.7"/>
+<circle cx="48.0" cy="179.7" r="3" fill="#5b8a72"/>
+<circle cx="173.3" cy="171.5" r="3" fill="#5b8a72"/>
+<circle cx="298.7" cy="155.1" r="3" fill="#5b8a72"/>
+<circle cx="612.0" cy="138.7" r="3" fill="#5b8a72"/>
+<polyline fill="none" stroke="#b08954" stroke-width="2.2" points="48.0,163.3 173.3,114.1 298.7,106.0 612.0,81.4"/>
+<circle cx="48.0" cy="163.3" r="3" fill="#b08954"/>
+<circle cx="173.3" cy="114.1" r="3" fill="#b08954"/>
+<circle cx="298.7" cy="106.0" r="3" fill="#b08954"/>
+<circle cx="612.0" cy="81.4" r="3" fill="#b08954"/>
+<polyline fill="none" stroke="#7a6f9e" stroke-width="2.2" points="48.0,179.7 173.3,163.3 298.7,155.1 612.0,138.7"/>
+<circle cx="48.0" cy="179.7" r="3" fill="#7a6f9e"/>
+<circle cx="173.3" cy="163.3" r="3" fill="#7a6f9e"/>
+<circle cx="298.7" cy="155.1" r="3" fill="#7a6f9e"/>
+<circle cx="612.0" cy="138.7" r="3" fill="#7a6f9e"/>
+<text class="series-label" x="622" y="85.4" fill="#b08954">zh-CN filter</text>
+<text class="series-label" x="622" y="99.4" fill="#7d8aa0">baseline</text>
+<text class="series-label" x="622" y="142.7" fill="#5b8a72">hybrid</text>
+<text class="series-label" x="622" y="156.7" fill="#7a6f9e">zh-CN + hybrid</text>
+</svg>

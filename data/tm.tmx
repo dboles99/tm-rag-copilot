@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmx version="1.4">
+  <header creationtool="tm-rag-copilot" creationtoolversion="0.1.0" segtype="sentence" o-tmf="tm-rag-copilot" adminlang="en" srclang="en" datatype="PlainText"/>
+  <body>
+    <tu tuid="ui-new-game">
+      <tuv xml:lang="en"><seg>New Game</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>新游戏</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>新遊戲</seg></tuv>
+      <tuv xml:lang="th"><seg>เกมใหม่</seg></tuv>
+    </tu>
+    <tu tuid="ui-continue">
+      <tuv xml:lang="en"><seg>Continue</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>继续游戏</seg></tuv>
+      <tuv xml:lang="th"><seg>เริ่มต่อ</seg></tuv>
+    </tu>
+    <tu tuid="ui-load-game">
+      <tuv xml:lang="en"><seg>Load Game</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>读取游戏</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>載入遊戲</seg></tuv>
+    </tu>
+    <tu tuid="ui-save-game">
+      <tuv xml:lang="en"><seg>Save Game</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>保存游戏</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>儲存遊戲</seg></tuv>
+      <tuv xml:lang="th"><seg>บันทึกเกม</seg></tuv>
+    </tu>
+    <tu tuid="ui-settings">
+      <tuv xml:lang="en"><seg>Settings</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>设置</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>設定</seg></tuv>
+      <tuv xml:lang="th"><seg>การตั้งค่า</seg></tuv>
+    </tu>
+    <tu tuid="ui-quit">
+      <tuv xml:lang="en"><seg>Quit Game</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>退出游戏</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>離開遊戲</seg></tuv>
+      <tuv xml:lang="th"><seg>ออกจากเกม</seg></tuv>
+    </tu>
+    <tu tuid="ui-extras">
+      <tuv xml:lang="en"><seg>Extras</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>奖励内容</seg></tuv>
+    </tu>
+    <tu tuid="ui-credits">
+      <tuv xml:lang="en"><seg>Credits</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>制作人员名单</seg></tuv>
+    </tu>
+    <tu tuid="ui-back">
+      <tuv xml:lang="en"><seg>Back</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>返回</seg></tuv>
+    </tu>
+    <tu tuid="ui-confirm">
+      <tuv xml:lang="en"><seg>Confirm</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>确认</seg></tuv>
+    </tu>
+    <tu tuid="ui-cancel">
+      <tuv xml:lang="en"><seg>Cancel</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>取消</seg></tuv>
+    </tu>
+    <tu tuid="ui-apply">
+      <tuv xml:lang="en"><seg>Apply</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>应用</seg></tuv>
+    </tu>
+    <tu tuid="ui-close">
+      <tuv xml:lang="en"><seg>Close</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>关闭</seg></tuv>
+    </tu>
+    <tu tuid="ui-delete">
+      <tuv xml:lang="en"><seg>Delete</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>删除</seg></tuv>
+    </tu>
+    <tu tuid="ui-rename">
+      <tuv xml:lang="en"><seg>Rename</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>重命名</seg></tuv>
+    </tu>
+    <tu tuid="ui-copy">
+      <tuv xml:lang="en"><seg>Copy</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>复制</seg></tuv>
+    </tu>
+    <tu tuid="ui-paste">
+      <tuv xml:lang="en"><seg>Paste</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>粘贴</seg></tuv>
+    </tu>
+    <tu tuid="ui-yes">
+      <tuv xml:lang="en"><seg>Yes</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>是</seg></tuv>
+    </tu>
+    <tu tuid="ui-no">
+      <tuv xml:lang="en"><seg>No</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>否</seg></tuv>
+    </tu>
+    <tu tuid="ui-ok">
+      <tuv xml:lang="en"><seg>OK</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>好的</seg></tuv>
+    </tu>
+    <tu tuid="ui-difficulty">
+      <tuv xml:lang="en"><seg>Difficulty</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>难度</seg></tuv>
+    </tu>
+    <tu tuid="ui-easy">
+      <tuv xml:lang="en"><seg>Easy</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>简单</seg></tuv>
+    </tu>
+    <tu tuid="ui-normal">
+      <tuv xml:lang="en"><seg>Normal</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>普通</seg></tuv>
+    </tu>
+    <tu tuid="ui-hard">
+      <tuv xml:lang="en"><seg>Hard</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>困难</seg></tuv>
+    </tu>
+    <tu tuid="ui-nightmare">
+      <tuv xml:lang="en"><seg>Nightmare</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>噩梦</seg></tuv>
+    </tu>
+    <tu tuid="ui-graphics">
+      <tuv xml:lang="en"><seg>Graphics</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>画面设置</seg></tuv>
+    </tu>
+    <tu tuid="ui-resolution">
+      <tuv xml:lang="en"><seg>Resolution</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>分辨率</seg></tuv>
+    </tu>
+    <tu tuid="ui-fullscreen">
+      <tuv xml:lang="en"><seg>Fullscreen</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>全屏</seg></tuv>
+    </tu>
+    <tu tuid="ui-windowed">
+      <tuv xml:lang="en"><seg>Windowed</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>窗口模式</seg></tuv>
+    </tu>
+    <tu tuid="ui-brightness">
+      <tuv xml:lang="en"><seg>Brightness</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>亮度</seg></tuv>
+    </tu>
+    <tu tuid="ui-sound">
+      <tuv xml:lang="en"><seg>Sound</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>声音设置</seg></tuv>
+    </tu>
+    <tu tuid="ui-music-volume">
+      <tuv xml:lang="en"><seg>Music Volume</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>音乐音量</seg></tuv>
+    </tu>
+    <tu tuid="ui-sfx-volume">
+      <tuv xml:lang="en"><seg>Sound Effects Volume</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>音效音量</seg></tuv>
+    </tu>
+    <tu tuid="ui-language">
+      <tuv xml:lang="en"><seg>Language</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>语言</seg></tuv>
+    </tu>
+    <tu tuid="ui-subtitles">
+      <tuv xml:lang="en"><seg>Subtitles</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>字幕</seg></tuv>
+    </tu>
+    <tu tuid="ui-voice-chat">
+      <tuv xml:lang="en"><seg>Voice Chat</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>语音聊天</seg></tuv>
+    </tu>
+    <tu tuid="ui-controls">
+      <tuv xml:lang="en"><seg>Controls</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>控制设置</seg></tuv>
+    </tu>
+    <tu tuid="ui-mouse-sensitivity">
+      <tuv xml:lang="en"><seg>Mouse Sensitivity</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>鼠标灵敏度</seg></tuv>
+    </tu>
+    <tu tuid="ui-invert-y">
+      <tuv xml:lang="en"><seg>Invert Y-Axis</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>反转Y轴</seg></tuv>
+    </tu>
+    <tu tuid="ui-vibration">
+      <tuv xml:lang="en"><seg>Controller Vibration</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>手柄震动</seg></tuv>
+    </tu>
+    <tu tuid="hud-level">
+      <tuv xml:lang="en"><seg>Level %d</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>等级 %d</seg></tuv>
+    </tu>
+    <tu tuid="hud-hp">
+      <tuv xml:lang="en"><seg>Health</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>生命值</seg></tuv>
+    </tu>
+    <tu tuid="hud-mana">
+      <tuv xml:lang="en"><seg>Mana</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>法力</seg></tuv>
+    </tu>
+    <tu tuid="hud-stamina">
+      <tuv xml:lang="en"><seg>Stamina</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>体力</seg></tuv>
+    </tu>
+    <tu tuid="hud-gold">
+      <tuv xml:lang="en"><seg>Gold</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>金币</seg></tuv>
+    </tu>
+    <tu tuid="hud-gems">
+      <tuv xml:lang="en"><seg>Ember Gems</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>烬石</seg></tuv>
+    </tu>
+    <tu tuid="hud-xp">
+      <tuv xml:lang="en"><seg>Experience</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>经验值</seg></tuv>
+    </tu>
+    <tu tuid="hud-quest-log">
+      <tuv xml:lang="en"><seg>Quest Log</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>任务日志</seg></tuv>
+    </tu>
+    <tu tuid="hud-map">
+      <tuv xml:lang="en"><seg>Map</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>地图</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>地圖</seg></tuv>
+    </tu>
+    <tu tuid="hud-inventory">
+      <tuv xml:lang="en"><seg>Inventory</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>物品栏</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>物品欄</seg></tuv>
+    </tu>
+    <tu tuid="hud-skills">
+      <tuv xml:lang="en"><seg>Skills</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>技能</seg></tuv>
+    </tu>
+    <tu tuid="hud-equipment">
+      <tuv xml:lang="en"><seg>Equipment</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>装备</seg></tuv>
+    </tu>
+    <tu tuid="hud-character">
+      <tuv xml:lang="en"><seg>Character</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>角色</seg></tuv>
+    </tu>
+    <tu tuid="hud-achievements">
+      <tuv xml:lang="en"><seg>Achievements</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>成就</seg></tuv>
+    </tu>
+    <tu tuid="hud-fast-travel">
+      <tuv xml:lang="en"><seg>Fast Travel</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>快速旅行</seg></tuv>
+    </tu>
+    <tu tuid="hud-screenshot">
+      <tuv xml:lang="en"><seg>Screenshot saved to %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>截图已保存至 %s</seg></tuv>
+    </tu>
+    <tu tuid="hud-players-online">
+      <tuv xml:lang="en"><seg>%d players online</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>%d 名玩家在线</seg></tuv>
+    </tu>
+    <tu tuid="hud-ping">
+      <tuv xml:lang="en"><seg>Ping: %d ms</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>延迟:%d 毫秒</seg></tuv>
+    </tu>
+    <tu tuid="hud-day">
+      <tuv xml:lang="en"><seg>Day %d, %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>第 %d 天,%s</seg></tuv>
+    </tu>
+    <tu tuid="hud-weather">
+      <tuv xml:lang="en"><seg>Weather: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>天气:%s</seg></tuv>
+    </tu>
+    <tu tuid="combat-attack">
+      <tuv xml:lang="en"><seg>Attack</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>攻击</seg></tuv>
+    </tu>
+    <tu tuid="combat-defend">
+      <tuv xml:lang="en"><seg>Defend</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>防御</seg></tuv>
+    </tu>
+    <tu tuid="combat-dodge">
+      <tuv xml:lang="en"><seg>Dodge</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>闪避</seg></tuv>
+    </tu>
+    <tu tuid="combat-use-item">
+      <tuv xml:lang="en"><seg>Use Item</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>使用物品</seg></tuv>
+    </tu>
+    <tu tuid="combat-skill">
+      <tuv xml:lang="en"><seg>Skill</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>技能</seg></tuv>
+    </tu>
+    <tu tuid="combat-ultimate">
+      <tuv xml:lang="en"><seg>Ultimate Skill</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>终极技能</seg></tuv>
+    </tu>
+    <tu tuid="combat-combo">
+      <tuv xml:lang="en"><seg>Combo x%d</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>连击 x%d</seg></tuv>
+    </tu>
+    <tu tuid="combat-critical">
+      <tuv xml:lang="en"><seg>Critical Hit!</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>暴击!</seg></tuv>
+    </tu>
+    <tu tuid="combat-miss">
+      <tuv xml:lang="en"><seg>Miss</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>未命中</seg></tuv>
+    </tu>
+    <tu tuid="combat-damage">
+      <tuv xml:lang="en"><seg>%d damage dealt</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>造成 %d 点伤害</seg></tuv>
+    </tu>
+    <tu tuid="combat-healed">
+      <tuv xml:lang="en"><seg>Restored %d HP</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>恢复 %d 点生命值</seg></tuv>
+    </tu>
+    <tu tuid="combat-mana-cost">
+      <tuv xml:lang="en"><seg>Costs %d mana</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>消耗 %d 点法力</seg></tuv>
+    </tu>
+    <tu tuid="combat-cooldown">
+      <tuv xml:lang="en"><seg>Cooldown: %d s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>冷却时间:%d 秒</seg></tuv>
+    </tu>
+    <tu tuid="combat-buff">
+      <tuv xml:lang="en"><seg>Buff: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>增益:%s</seg></tuv>
+    </tu>
+    <tu tuid="combat-debuff">
+      <tuv xml:lang="en"><seg>Debuff: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>减益:%s</seg></tuv>
+    </tu>
+    <tu tuid="combat-boss-warning">
+      <tuv xml:lang="en"><seg>&lt;b&gt;Warning:&lt;/b&gt; a boss is near</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>&lt;b&gt;警告:&lt;/b&gt;首领就在附近</seg></tuv>
+    </tu>
+    <tu tuid="combat-victory">
+      <tuv xml:lang="en"><seg>Victory!</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>胜利!</seg></tuv>
+    </tu>
+    <tu tuid="combat-defeat">
+      <tuv xml:lang="en"><seg>You have fallen</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>你已阵亡</seg></tuv>
+    </tu>
+    <tu tuid="combat-respawn">
+      <tuv xml:lang="en"><seg>Respawn in %d seconds</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>%d 秒后重生</seg></tuv>
+    </tu>
+    <tu tuid="combat-loot">
+      <tuv xml:lang="en"><seg>Loot: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>战利品:%s</seg></tuv>
+    </tu>
+    <tu tuid="item-health-potion">
+      <tuv xml:lang="en"><seg>Health Potion</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>生命药水</seg></tuv>
+    </tu>
+    <tu tuid="item-mana-crystal">
+      <tuv xml:lang="en"><seg>Mana Crystal</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>法力水晶</seg></tuv>
+    </tu>
+    <tu tuid="item-elixir">
+      <tuv xml:lang="en"><seg>Elixir</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>灵露</seg></tuv>
+    </tu>
+    <tu tuid="item-star-shard">
+      <tuv xml:lang="en"><seg>Star Shard</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>星屑</seg></tuv>
+    </tu>
+    <tu tuid="item-phoenix-feather">
+      <tuv xml:lang="en"><seg>Phoenix Feather</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>凤羽</seg></tuv>
+    </tu>
+    <tu tuid="item-emberbrand-sword">
+      <tuv xml:lang="en"><seg>Emberbrand Sword</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>烬誓剑</seg></tuv>
+    </tu>
+    <tu tuid="item-rune-of-warding">
+      <tuv xml:lang="en"><seg>Rune of Warding</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>护身符文</seg></tuv>
+    </tu>
+    <tu tuid="item-mana-restore">
+      <tuv xml:lang="en"><seg>Restores %d mana</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>恢复 %d 点法力</seg></tuv>
+    </tu>
+    <tu tuid="item-heal-amount">
+      <tuv xml:lang="en"><seg>Restores %d HP</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>恢复 %d 点生命值</seg></tuv>
+    </tu>
+    <tu tuid="item-equip">
+      <tuv xml:lang="en"><seg>Equip</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>装备</seg></tuv>
+    </tu>
+    <tu tuid="item-unequip">
+      <tuv xml:lang="en"><seg>Unequip</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>卸下</seg></tuv>
+    </tu>
+    <tu tuid="item-sell">
+      <tuv xml:lang="en"><seg>Sell</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>出售</seg></tuv>
+    </tu>
+    <tu tuid="item-buy">
+      <tuv xml:lang="en"><seg>Buy</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>购买</seg></tuv>
+    </tu>
+    <tu tuid="item-price">
+      <tuv xml:lang="en"><seg>Price: %d gold</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>价格:%d 金币</seg></tuv>
+    </tu>
+    <tu tuid="item-quantity">
+      <tuv xml:lang="en"><seg>x%d</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>x%d</seg></tuv>
+    </tu>
+    <tu tuid="item-new">
+      <tuv xml:lang="en"><seg>New item acquired: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>获得新物品:%s</seg></tuv>
+    </tu>
+    <tu tuid="item-inventory-full">
+      <tuv xml:lang="en"><seg>Inventory full</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>物品栏已满</seg></tuv>
+    </tu>
+    <tu tuid="item-cannot-use">
+      <tuv xml:lang="en"><seg>Cannot use this item now</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>现在无法使用该物品</seg></tuv>
+    </tu>
+    <tu tuid="item-level-required">
+      <tuv xml:lang="en"><seg>Requires level %d</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>需要等级 %d</seg></tuv>
+    </tu>
+    <tu tuid="item-equip-confirm">
+      <tuv xml:lang="en"><seg>Equip {item_name}?</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>装备 {item_name} 吗?</seg></tuv>
+    </tu>
+    <tu tuid="dlg-001">
+      <tuv xml:lang="en"><seg>Welcome to Emberveil Legends, {name}!</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>欢迎来到烬堇传说,{name}!</seg></tuv>
+    </tu>
+    <tu tuid="dlg-002">
+      <tuv xml:lang="en"><seg>The Hollow King stirs in the dark...</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>虚王在黑暗中苏醒……</seg></tuv>
+    </tu>
+    <tu tuid="dlg-003">
+      <tuv xml:lang="en"><seg>Old Brom: "Mind the ember wisps, lad."</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>老布罗姆:"小心烬灵,小伙子。"</seg></tuv>
+    </tu>
+    <tu tuid="dlg-004">
+      <tuv xml:lang="en"><seg>Quest accepted: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>已接受任务:%s</seg></tuv>
+    </tu>
+    <tu tuid="dlg-005">
+      <tuv xml:lang="en"><seg>Quest completed: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>任务完成:%s</seg></tuv>
+    </tu>
+    <tu tuid="dlg-006">
+      <tuv xml:lang="en"><seg>Quest failed: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>任务失败:%s</seg></tuv>
+    </tu>
+    <tu tuid="dlg-007">
+      <tuv xml:lang="en"><seg>Mireya: "The rune gate opens at dusk."</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>米蕾娅:"符文之门在黄昏时开启。"</seg></tuv>
+    </tu>
+    <tu tuid="dlg-008">
+      <tuv xml:lang="en"><seg>Seraphine: "Take the Star Shards to Nyxamera."</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>塞拉菲娜:"把星屑带到暗曜城。"</seg></tuv>
+    </tu>
+    <tu tuid="dlg-009">
+      <tuv xml:lang="en"><seg>Kaelith: "For the realms!"</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>卡莱瑟:"为了诸界!"</seg></tuv>
+    </tu>
+    <tu tuid="dlg-010">
+      <tuv xml:lang="en"><seg>Achievement unlocked: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>解锁成就:%s</seg></tuv>
+    </tu>
+    <tu tuid="dlg-011">
+      <tuv xml:lang="en"><seg>Guild joined: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>已加入公会:%s</seg></tuv>
+    </tu>
+    <tu tuid="dlg-012">
+      <tuv xml:lang="en"><seg>Clan invite from {name}</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>{name} 邀请你加入部族</seg></tuv>
+    </tu>
+    <tu tuid="dlg-013">
+      <tuv xml:lang="en"><seg>You have %d unread messages</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>你有 %d 条未读消息</seg></tuv>
+    </tu>
+    <tu tuid="dlg-014">
+      <tuv xml:lang="en"><seg>Are you sure you want to leave the guild?</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>你确定要离开公会吗?</seg></tuv>
+    </tu>
+    <tu tuid="dlg-015">
+      <tuv xml:lang="en"><seg>Fast travel unlocked: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>解锁快速旅行:%s</seg></tuv>
+    </tu>
+    <tu tuid="dlg-016">
+      <tuv xml:lang="en"><seg>Checkpoint reached</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>已到达检查点</seg></tuv>
+      <tuv xml:lang="zh-TW"><seg>已到達檢查點</seg></tuv>
+    </tu>
+    <tu tuid="dlg-017">
+      <tuv xml:lang="en"><seg>New Game+ unlocked</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>解锁新周目</seg></tuv>
+    </tu>
+    <tu tuid="dlg-018">
+      <tuv xml:lang="en"><seg>Title earned: %s</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>获得头衔:%s</seg></tuv>
+    </tu>
+    <tu tuid="dlg-019">
+      <tuv xml:lang="en"><seg>Your mount is ready</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>你的坐骑已准备好</seg></tuv>
+    </tu>
+    <tu tuid="dlg-020">
+      <tuv xml:lang="en"><seg>Your pet learned a new trick</seg></tuv>
+      <tuv xml:lang="zh-CN"><seg>你的宠物学会了新技能</seg></tuv>
+    </tu>
+  </body>
+</tmx>

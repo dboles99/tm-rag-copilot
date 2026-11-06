@@ -1,0 +1,41 @@
+{"query": "start a brand new playthrough", "expected_id": "ui-new-game"}
+{"query": "resume my saved adventure", "expected_id": "ui-continue"}
+{"query": "open a previous save file", "expected_id": "ui-load-game"}
+{"query": "store my progress right now", "expected_id": "ui-save-game"}
+{"query": "change the game options", "expected_id": "ui-settings"}
+{"query": "exit to the desktop", "expected_id": "ui-quit"}
+{"query": "go back to the previous screen", "expected_id": "ui-back"}
+{"query": "accept this action", "expected_id": "ui-confirm"}
+{"query": "abort the current action", "expected_id": "ui-cancel"}
+{"query": "pick how hard the game is", "expected_id": "ui-difficulty"}
+{"query": "choose the easiest mode", "expected_id": "ui-easy"}
+{"query": "turn on full screen display", "expected_id": "ui-fullscreen"}
+{"query": "adjust the screen brightness", "expected_id": "ui-brightness"}
+{"query": "change the display language", "expected_id": "ui-language"}
+{"query": "show subtitles during cutscenes", "expected_id": "ui-subtitles"}
+{"query": "how much health do I have left", "expected_id": "hud-hp"}
+{"query": "check my mana pool", "expected_id": "hud-mana"}
+{"query": "am I out of stamina", "expected_id": "hud-stamina"}
+{"query": "how many gold coins do I have", "expected_id": "hud-gold"}
+{"query": "open my bag", "expected_id": "hud-inventory"}
+{"query": "view the world map", "expected_id": "hud-map"}
+{"query": "show my quest list", "expected_id": "hud-quest-log"}
+{"query": "perform a basic attack", "expected_id": "combat-attack"}
+{"query": "guard against the next hit", "expected_id": "combat-defend"}
+{"query": "dodge out of the way", "expected_id": "combat-dodge"}
+{"query": "land a critical strike", "expected_id": "combat-critical"}
+{"query": "how much damage did I deal", "expected_id": "combat-damage"}
+{"query": "heal my wounds", "expected_id": "combat-healed"}
+{"query": "how long until my skill is ready again", "expected_id": "combat-cooldown"}
+{"query": "we won the fight", "expected_id": "combat-victory"}
+{"query": "what happens when I die", "expected_id": "combat-defeat"}
+{"query": "use a red potion in battle", "expected_id": "item-health-potion"}
+{"query": "restore my magic resource", "expected_id": "item-mana-crystal"}
+{"query": "buy something at the shop", "expected_id": "item-buy"}
+{"query": "put this sword on my character", "expected_id": "item-equip"}
+{"query": "my bag is completely full", "expected_id": "item-inventory-full"}
+{"query": "this item needs a higher level", "expected_id": "item-level-required"}
+{"query": "welcome message shown to a new player", "expected_id": "dlg-001"}
+{"query": "the quest was accepted", "expected_id": "dlg-004"}
+{"query": "popup when an achievement is unlocked", "expected_id": "dlg-010", "max_chars": 12}
+{"query": "a checkpoint was reached while exploring", "expected_id": "dlg-016"}

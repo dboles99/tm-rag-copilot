@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tm-rag-copilot: measured results</title>
+<style>
+:root {
+  --bg: #fbfbf9; --ink: #23272e; --muted: #6a7280; --card: #ffffff;
+  --line: #e4e6ea; --accent: #2f6f8f; --grid: #e8eaee; --fail: #b3564d;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181c; --ink: #e8eaee; --muted: #9aa2ad; --card: #1e2126;
+    --line: #2e333a; --accent: #6fb3d8; --grid: #2a2f36; --fail: #d98a80;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); line-height: 1.6;
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+header, main, footer { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; }
+header { padding-top: 3rem; }
+h1 { font-size: 2rem; margin: 0 0 .4rem; }
+h2 {
+  font-size: 1.25rem; margin: 2.75rem 0 .9rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+.tagline { font-size: 1.05rem; max-width: 46rem; margin: .2rem 0 .6rem; }
+.zh { color: var(--muted); margin: .3rem 0 0; max-width: 46rem; }
+.lede {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 1rem 1.25rem; margin-top: 1.5rem;
+}
+.lede-title { margin: 0 0 .35rem; font-weight: 650; }
+.lede ul { margin: 0; padding-left: 1.2rem; }
+.lede li { margin: .25rem 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.25rem; }
+.card .value { font-size: 2rem; font-weight: 650; color: var(--accent); font-variant-numeric: tabular-nums; }
+.card .label { color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+.card .sub { display: block; color: var(--muted); font-size: .8rem; margin-top: .2rem; }
+figure { margin: 1rem 0 0; }
+svg { width: 100%; height: auto; display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+figcaption, .note { font-size: .87rem; color: var(--muted); margin: .55rem 0 0; }
+.tablewrap { overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; }
+.tablewrap table { min-width: 36rem; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td .sub { color: var(--muted); font-size: .82rem; display: block; }
+tr.kept-row td { background: rgba(47, 111, 143, .10); }
+.pill {
+  display: inline-block; padding: .1rem .55rem; border-radius: 999px;
+  font-size: .78rem; font-weight: 600; white-space: nowrap;
+}
+.pill.pass { color: var(--accent); background: rgba(47, 111, 143, .14); }
+.pill.fail { color: var(--fail); background: rgba(179, 86, 77, .14); }
+.bar-row { display: grid; grid-template-columns: 13rem 1fr; gap: .75rem; align-items: center; margin: .55rem 0; }
+.bar-stack { display: grid; gap: .3rem; }
+.bar-line { display: grid; grid-template-columns: 1fr 4.5rem; gap: .5rem; align-items: center; }
+.bar-label { font-size: .88rem; overflow-wrap: anywhere; }
+.bar-track { background: var(--grid); border-radius: 4px; height: 8px; overflow: hidden; }
+.bar-fill { background: var(--accent); border-radius: 4px; height: 100%; }
+.bar-fill.alt { background: var(--muted); }
+.bar-val { font-variant-numeric: tabular-nums; font-size: .8rem; color: var(--muted); text-align: right; }
+.legend { font-size: .85rem; color: var(--muted); margin: .6rem 0 0; }
+ul { padding-left: 1.25rem; margin: .5rem 0 0; }
+li { margin: .3rem 0; }
+.exp-notes li { margin: .45rem 0; }
+footer { color: var(--muted); font-size: .85rem; padding-top: 2.5rem; padding-bottom: 3rem; }
+@media (max-width: 40rem) {
+  .bar-row { grid-template-columns: 8.5rem 1fr; }
+  .bar-line { grid-template-columns: 1fr 4rem; }
+  h1 { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>tm-rag-copilot</h1>
+<p class="tagline">A small, honest demo that embeds a synthetic translation memory and term base, retrieves by meaning, translates with a local model and checks every output with deterministic QA.</p>
+<p class="zh">简体中文:把虚构的翻译记忆(TMX)和术语库(TBX)向量化存入本地索引,按语义检索最相似的句段,用本地模型生成译文,并用确定性规则逐条做质量检查。</p>
+<p class="zh">繁體中文:把虛構的翻譯記憶(TMX)和術語庫(TBX)向量化存入本地索引,依語義檢索最相似的句段,用本地模型產生譯文,並以確定性規則逐條進行品質檢查。</p>
+</header>
+<main>
+<div class="lede"><p class="lede-title">What this shows</p><ul><li>Retrieval over a translation memory: each new string reuses the closest stored segment, so output starts from approved translations instead of being generated from scratch.</li><li>Deterministic QA that catches model mistakes: every output is checked against its source, and on the real model run it caught the one output that broke a rule (shown in the examples below).</li><li>Measured experiments only: 6 runs on the same gold set, including one, hybrid keyword search, that made recall worse and was not adopted.</li></ul></div>
+<section>
+<h2>Headline numbers</h2>
+<div class="cards"><div class="card"><div class="value">97.6%</div><div class="label">QA pass with a real model (Qwen)<span class="sub">80.5% with the retrieval-only baseline</span></div></div><div class="card"><div class="value">82.9%</div><div class="label">Right match in the top 10 (zh-CN filter)</div></div><div class="card"><div class="value">58.5%</div><div class="label">Right match first (zh-CN filter)</div></div><div class="card"><div class="value">0</div><div class="label">Bad JSON replies in 41 runs</div></div></div>
+<p class="note">Sources: eval_qwen.json: qwen2.5-coder:14b served locally, prompt v2.0, 41 gold items, 544 s wall time; eval.json: retrieval-only baseline, mock provider; eval_zhcn.json: zh-CN target-language filter.</p>
+</section>
+<section>
+<h2>Pipeline</h2>
+<figure><svg class="pipe pipe-root" viewBox="0 0 920 210" role="img" aria-label="pipeline diagram">
+<style>
+.pipe-root { --pbg: #ffffff; --pink: #3c4148; --pbox: #f2f4f7; --pedge: #b9c0ca; --parrow: #8a93a0; }
+@media (prefers-color-scheme: dark) {
+  .pipe-root { --pbg: #1e2126; --pink: #d7dbe0; --pbox: #262a31; --pedge: #4a5058; --parrow: #8a93a0; }
+}
+.pipe text { font-family: -apple-system, "Segoe UI", Roboto, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 12.5px; fill: var(--pink); }
+.pipe .bg { fill: var(--pbg); }
+.pipe .box { fill: var(--pbox); stroke: var(--pedge); stroke-width: 1.2; }
+.pipe .stage { font-weight: 650; }
+.pipe .arrow { stroke: var(--parrow); stroke-width: 1.4; fill: none; }
+.pipe .head { fill: var(--parrow); }
+</style>
+<rect class="bg" x="0" y="0" width="920" height="210" rx="10"/>
+<defs><marker id="arrowhead" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path class="head" d="M0,0 L8,4.5 L0,9 z"/></marker></defs>
+<rect class="box" x="24" y="24" width="200" height="56" rx="9"/><text class="stage" x="124.0" y="47" text-anchor="middle">TMX + TBX</text><text x="124.0" y="65" text-anchor="middle">data files</text>
+<rect class="box" x="248" y="24" width="200" height="56" rx="9"/><text class="stage" x="348.0" y="47" text-anchor="middle">parse</text><text x="348.0" y="65" text-anchor="middle">tmx.py, tbx.py</text>
+<rect class="box" x="472" y="24" width="200" height="56" rx="9"/><text class="stage" x="572.0" y="47" text-anchor="middle">embed + index</text><text x="572.0" y="65" text-anchor="middle">MiniLM, Qdrant</text>
+<rect class="box" x="696" y="24" width="200" height="56" rx="9"/><text class="stage" x="796.0" y="47" text-anchor="middle">retrieve</text><text x="796.0" y="65" text-anchor="middle">vector, +BM25 RRF</text>
+<rect class="box" x="24" y="144" width="200" height="56" rx="9"/><text class="stage" x="124.0" y="167" text-anchor="middle">prompt</text><text x="124.0" y="185" text-anchor="middle">v1.0 text, v2.0 JSON</text>
+<rect class="box" x="248" y="144" width="200" height="56" rx="9"/><text class="stage" x="348.0" y="167" text-anchor="middle">model</text><text x="348.0" y="185" text-anchor="middle">mock or Qwen via Ollama</text>
+<rect class="box" x="472" y="144" width="200" height="56" rx="9"/><text class="stage" x="572.0" y="167" text-anchor="middle">QA</text><text x="572.0" y="185" text-anchor="middle">deterministic rules</text>
+<rect class="box" x="696" y="144" width="200" height="56" rx="9"/><text class="stage" x="796.0" y="167" text-anchor="middle">evaluate</text><text x="796.0" y="185" text-anchor="middle">recall@k, MRR, QA</text>
+<line class="arrow" x1="227" y1="52.0" x2="243" y2="52.0" marker-end="url(#arrowhead)"/>
+<line class="arrow" x1="451" y1="52.0" x2="467" y2="52.0" marker-end="url(#arrowhead)"/>
+<line class="arrow" x1="675" y1="52.0" x2="691" y2="52.0" marker-end="url(#arrowhead)"/>
+<line class="arrow" x1="227" y1="172.0" x2="243" y2="172.0" marker-end="url(#arrowhead)"/>
+<line class="arrow" x1="451" y1="172.0" x2="467" y2="172.0" marker-end="url(#arrowhead)"/>
+<line class="arrow" x1="675" y1="172.0" x2="691" y2="172.0" marker-end="url(#arrowhead)"/>
+<path class="arrow" d="M 796.0 83 L 796.0 130 L 124.0 130 L 124.0 139" marker-end="url(#arrowhead)"/>
+</svg><figcaption>TMX and TBX go in; segments are embedded and indexed, retrieved, prompted, generated, QA-checked and evaluated. Retrieval options: target-language filter and hybrid BM25 + RRF.</figcaption></figure>
+</section>
+<section>
+<h2>Recall@k by configuration</h2>
+<figure><svg class="rchart rchart-root" viewBox="0 0 780 400" role="img" aria-label="recall@k by configuration">
+<style>
+.rchart-root { --cbg: #ffffff; --cink: #3c4148; --cgrid: #e8eaee; --cline: #c6ccd4; }
+@media (prefers-color-scheme: dark) {
+  .rchart-root { --cbg: #1e2126; --cink: #d7dbe0; --cgrid: #2a2f36; --cline: #4a5058; }
+}
+.rchart text { font-family: -apple-system, "Segoe UI", Roboto, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 12px; fill: var(--cink); }
+.rchart .bg { fill: var(--cbg); }
+.rchart .grid { stroke: var(--cgrid); stroke-width: 1; }
+.rchart .axis { stroke: var(--cline); stroke-width: 1; }
+.rchart .series-label { font-size: 12px; font-weight: 600; }
+</style>
+<rect class="bg" x="0" y="0" width="780" height="400" rx="10"/>
+<line class="grid" x1="48" y1="360.0" x2="612" y2="360.0"/>
+<text x="40" y="364.0" text-anchor="end">0.0</text>
+<line class="grid" x1="48" y1="292.8" x2="612" y2="292.8"/>
+<text x="40" y="296.8" text-anchor="end">0.2</text>
+<line class="grid" x1="48" y1="225.6" x2="612" y2="225.6"/>
+<text x="40" y="229.6" text-anchor="end">0.4</text>
+<line class="grid" x1="48" y1="158.4" x2="612" y2="158.4"/>
+<text x="40" y="162.4" text-anchor="end">0.6</text>
+<line class="grid" x1="48" y1="91.2" x2="612" y2="91.2"/>
+<text x="40" y="95.2" text-anchor="end">0.8</text>
+<line class="grid" x1="48" y1="24.0" x2="612" y2="24.0"/>
+<text x="40" y="28.0" text-anchor="end">1.0</text>
+<line class="grid" x1="48.0" y1="24" x2="48.0" y2="360"/>
+<text x="48.0" y="378" text-anchor="middle">k=1</text>
+<line class="grid" x1="173.3" y1="24" x2="173.3" y2="360"/>
+<text x="173.3" y="378" text-anchor="middle">k=3</text>
+<line class="grid" x1="298.7" y1="24" x2="298.7" y2="360"/>
+<text x="298.7" y="378" text-anchor="middle">k=5</text>
+<line class="grid" x1="612.0" y1="24" x2="612.0" y2="360"/>
+<text x="612.0" y="378" text-anchor="middle">k=10</text>
+<line class="axis" x1="48" y1="360" x2="612" y2="360"/>
+<line class="axis" x1="48" y1="24" x2="48" y2="360"/>
+<text x="48" y="16">recall@k</text>
+<polyline fill="none" stroke="#7d8aa0" stroke-width="2.2" points="48.0,187.9 173.3,130.5 298.7,114.1 612.0,89.6"/>
+<circle cx="48.0" cy="187.9" r="3" fill="#7d8aa0"/>
+<circle cx="173.3" cy="130.5" r="3" fill="#7d8aa0"/>
+<circle cx="298.7" cy="114.1" r="3" fill="#7d8aa0"/>
+<circle cx="612.0" cy="89.6" r="3" fill="#7d8aa0"/>
+<polyline fill="none" stroke="#5b8a72" stroke-width="2.2" points="48.0,179.7 173.3,171.5 298.7,155.1 612.0,138.7"/>
+<circle cx="48.0" cy="179.7" r="3" fill="#5b8a72"/>
+<circle cx="173.3" cy="171.5" r="3" fill="#5b8a72"/>
+<circle cx="298.7" cy="155.1" r="3" fill="#5b8a72"/>
+<circle cx="612.0" cy="138.7" r="3" fill="#5b8a72"/>
+<polyline fill="none" stroke="#b08954" stroke-width="2.2" points="48.0,163.3 173.3,114.1 298.7,106.0 612.0,81.4"/>
+<circle cx="48.0" cy="163.3" r="3" fill="#b08954"/>
+<circle cx="173.3" cy="114.1" r="3" fill="#b08954"/>
+<circle cx="298.7" cy="106.0" r="3" fill="#b08954"/>
+<circle cx="612.0" cy="81.4" r="3" fill="#b08954"/>
+<polyline fill="none" stroke="#7a6f9e" stroke-width="2.2" points="48.0,179.7 173.3,163.3 298.7,155.1 612.0,138.7"/>
+<circle cx="48.0" cy="179.7" r="3" fill="#7a6f9e"/>
+<circle cx="173.3" cy="163.3" r="3" fill="#7a6f9e"/>
+<circle cx="298.7" cy="155.1" r="3" fill="#7a6f9e"/>
+<circle cx="612.0" cy="138.7" r="3" fill="#7a6f9e"/>
+<text class="series-label" x="622" y="85.4" fill="#b08954">zh-CN filter</text>
+<text class="series-label" x="622" y="99.4" fill="#7d8aa0">baseline</text>
+<text class="series-label" x="622" y="142.7" fill="#5b8a72">hybrid</text>
+<text class="series-label" x="622" y="156.7" fill="#7a6f9e">zh-CN + hybrid</text>
+</svg><figcaption>Same gold set (data/gold.jsonl, 41 queries), same embedding model; only the retrieval options differ. Best measured configuration: target-lang zh-CN.</figcaption></figure>
+<p class="note">Cross-language check: 10 Chinese queries from gold_zh.jsonl searched against the English sources: recall@10 80.0%, MRR 55.9% (eval_crosslang.json).</p>
+</section>
+<section>
+<h2>QA by check: mock vs real model</h2>
+<div class="bar-row"><div class="bar-label">placeholder_preservation</div><div class="bar-stack"><div class="bar-line"><div class="bar-track"><div class="bar-fill alt" style="width:90.2%"></div></div><div class="bar-val">90.2%</div></div><div class="bar-line"><div class="bar-track"><div class="bar-fill " style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div></div></div><div class="bar-row"><div class="bar-label">required_term_used</div><div class="bar-stack"><div class="bar-line"><div class="bar-track"><div class="bar-fill alt" style="width:85.4%"></div></div><div class="bar-val">85.4%</div></div><div class="bar-line"><div class="bar-track"><div class="bar-fill " style="width:97.6%"></div></div><div class="bar-val">97.6%</div></div></div></div><div class="bar-row"><div class="bar-label">character_limit</div><div class="bar-stack"><div class="bar-line"><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div><div class="bar-line"><div class="bar-track"><div class="bar-fill " style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div></div></div><div class="bar-row"><div class="bar-label">forbidden_term_absent</div><div class="bar-stack"><div class="bar-line"><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div><div class="bar-line"><div class="bar-track"><div class="bar-fill " style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div></div></div><div class="bar-row"><div class="bar-label">number_preservation</div><div class="bar-stack"><div class="bar-line"><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div><div class="bar-line"><div class="bar-track"><div class="bar-fill " style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div></div></div><div class="bar-row"><div class="bar-label">tag_preservation</div><div class="bar-stack"><div class="bar-line"><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div><div class="bar-line"><div class="bar-track"><div class="bar-fill " style="width:100.0%"></div></div><div class="bar-val">100.0%</div></div></div></div><p class="legend">Each check has two thin bars: mock (grey bar, mock that copies the closest TM match) and Qwen (accent bar, real model). Percentages are the share of the 41 gold items passing that check; checks where the two runs differ are listed first.</p><p class="note">From eval.json, eval_qwen.json.</p>
+</section>
+<section>
+<h2>Real examples</h2>
+<div class="tablewrap"><table><thead><tr><th>Source</th><th>Closest match</th><th>zh-CN</th><th>zh-TW</th><th>th</th><th>Output (Qwen)</th><th>QA</th></tr></thead><tbody><tr><td>New Game<span class="sub">query: start a brand new playthrough</span></td><td>ui-new-game<span class="sub">新游戏</span></td><td>新游戏</td><td>新遊戲</td><td>เกมใหม่</td><td>新游戏</td><td><span class="pill pass">pass</span></td></tr><tr><td>Continue<span class="sub">query: resume my saved adventure</span></td><td>hud-xp<span class="sub">经验值</span></td><td>继续游戏</td><td>-</td><td>เริ่มต่อ</td><td>继续游戏</td><td><span class="pill pass">pass</span></td></tr><tr><td>Health<span class="sub">query: how much health do I have left</span></td><td>hud-hp<span class="sub">生命值</span></td><td>生命值</td><td>-</td><td>-</td><td>生命值</td><td><span class="pill pass">pass</span></td></tr><tr><td>%d damage dealt<span class="sub">query: how much damage did I deal</span></td><td>combat-damage<span class="sub">造成 %d 点伤害</span></td><td>造成 %d 点伤害</td><td>-</td><td>-</td><td>造成 %d 点伤害</td><td><span class="pill pass">pass</span></td></tr><tr><td>Health Potion<span class="sub">query: use a red potion in battle</span></td><td>item-health-potion<span class="sub">生命药水</span></td><td>生命药水</td><td>-</td><td>-</td><td>生命药水</td><td><span class="pill fail">fail: required_term_used</span></td></tr><tr><td>Welcome to Emberveil Legends, {name}!<span class="sub">query: welcome message shown to a new player</span></td><td>ui-new-game@th<span class="sub">เกมใหม่</span></td><td>欢迎来到烬堇传说,{name}!</td><td>-</td><td>-</td><td>欢迎来到烬堇传说，{name}！</td><td><span class="pill pass">pass</span></td></tr></tbody></table></div><p class="note">The zh-CN, zh-TW and th columns are the stored translations of that unit in the translation memory (a dash means the TM holds no variant in that language). The output column is what Qwen produced for the query; QA ran on the source segment.</p>
+</section>
+<section>
+<h2>What we tried</h2>
+<div class="tablewrap"><table><thead><tr><th>configuration</th><th>recall@1</th><th>recall@3</th><th>recall@5</th><th>recall@10</th><th>MRR</th><th>QA pass (provider)</th><th>kept</th></tr></thead><tbody><tr><td>baseline</td><td>51.2%</td><td>68.3%</td><td>73.2%</td><td>80.5%</td><td>61.5%</td><td>80.5% (mock)</td><td>no, reference</td></tr><tr class="kept-row"><td>target-lang zh-CN</td><td>58.5%</td><td>73.2%</td><td>75.6%</td><td>82.9%</td><td>67.5%</td><td>82.9% (mock)</td><td>yes, best</td></tr><tr><td>hybrid RRF+BM25</td><td>53.7%</td><td>56.1%</td><td>61.0%</td><td>65.8%</td><td>56.3%</td><td>87.8% (mock)</td><td>option only, worse recall</td></tr><tr><td>zh-CN + hybrid</td><td>53.7%</td><td>58.5%</td><td>61.0%</td><td>65.8%</td><td>56.6%</td><td>87.8% (mock)</td><td>no</td></tr><tr><td>zh queries, cross-language</td><td>50.0%</td><td>50.0%</td><td>70.0%</td><td>80.0%</td><td>55.9%</td><td>70.0% (mock)</td><td>standing check</td></tr><tr><td>baseline retrieval + ollama qwen2.5-coder:14b</td><td>51.2%</td><td>68.3%</td><td>73.2%</td><td>80.5%</td><td>61.5%</td><td>97.6% (ollama)</td><td>yes, real model run</td></tr></tbody></table></div>
+<ul class="exp-notes"><li>Plain vector search, nothing changed: the right match was in the top 10 for 80.5% of queries and ranked first for 51.2%; kept as the reference run, not the default.</li><li>Keeping only zh-CN units in the ranking lifted the top-10 share to 82.9% and first place to 58.5%; this is the configuration we kept.</li><li>Adding BM25 keyword fusion to the vector search made recall worse at every k, with the top-10 share falling to 65.8%; it stays an option, not the default.</li><li>Filter plus hybrid together was strictly worse than the filter alone (top-10 65.8% against 82.9% for the filter only); not adopted.</li><li>10 queries written in Chinese, searched against the English sources, still found the right match in the top 10 for 80.0% of them; kept as a standing cross-language check.</li><li>A real local model (Qwen) passed QA on 97.6% of the 41 items with 0 bad JSON replies, against 80.5% for the retrieval-only mock; kept as the translation path.</li></ul>
+<p class="note">One row per run in results/: eval.json, eval_crosslang.json, eval_hybrid.json, eval_qwen.json, eval_zhcn.json, eval_zhcn_hybrid.json.</p>
+</section>
+<section>
+<h2>What a production system adds</h2>
+<ul><li>A real LLM provider with retries, fallbacks and cost limits (this repo runs one locally: Qwen via Ollama).</li><li>A versioned TM with metadata (domain, quality scores, last used), per-language collections, and auth on the vector store.</li><li>Batch and async ingestion, a human review workflow, and terminology enforced during decoding (constrained decoding).</li><li>Continuous evaluation against a held-out set with alerts when recall or QA pass rate drops.</li></ul>
+</section>
+<section>
+<h2>Limits</h2>
+<ul><li>133 synthetic segments and a 384-dimensional MiniLM bound retrieval quality; recall@1 stays well below 1.</li><li>The mock provider copies the nearest TM match; it does not translate. Its QA failures are reported, not hidden.</li><li>Hybrid BM25 + RRF made recall worse on this paraphrased gold set (measured, kept as an option, not the default).</li><li>The term base covers zh-CN only; zh-TW and th units exist in the TM but terms are not enforced for them.</li><li>Qdrant runs in local mode, single process, no concurrency guarantees.</li><li>Every number on this page is from one run of the committed code on the committed data; deterministic here, not a general claim.</li></ul>
+</section>
+</main>
+<footer>
+Generated by <code>python -m tm_rag report</code> from results/*.json, data/ and EXPERIMENTS.md. Self-contained file: inline CSS and SVG only, no external resources.
+</footer>
+</body>
+</html>

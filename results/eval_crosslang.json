@@ -1,0 +1,184 @@
+{
+  "config": "zh queries",
+  "kind": "retrieval",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "collection": "tm",
+  "provider": "mock",
+  "llm_model": null,
+  "llm_base_url": null,
+  "prompt_version": "1.0",
+  "options": {
+    "target_lang": null,
+    "hybrid": false,
+    "rrf_k": 60
+  },
+  "gold_file": "gold_zh.jsonl",
+  "cross_language": true,
+  "n_units": 133,
+  "n_gold": 10,
+  "k_values": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "recall_at_k": {
+    "1": 0.5,
+    "3": 0.5,
+    "5": 0.7,
+    "10": 0.8
+  },
+  "mrr": 0.5593,
+  "qa_pass_rate": 0.7,
+  "qa_by_check": {
+    "character_limit": 1.0,
+    "forbidden_term_absent": 1.0,
+    "number_preservation": 1.0,
+    "placeholder_preservation": 0.9,
+    "required_term_used": 0.8,
+    "tag_preservation": 1.0
+  },
+  "qa_failures": [
+    {
+      "query": "查看我的法力值",
+      "expected_id": "hud-mana",
+      "failed_checks": [
+        "required_term_used"
+      ]
+    },
+    {
+      "query": "在战斗中喝下生命药水",
+      "expected_id": "item-health-potion",
+      "failed_checks": [
+        "required_term_used"
+      ]
+    },
+    {
+      "query": "新的任务已经接受",
+      "expected_id": "dlg-004",
+      "failed_checks": [
+        "placeholder_preservation"
+      ]
+    }
+  ],
+  "bad_json_count": 0,
+  "wall_time_seconds": 2.96,
+  "items": [
+    {
+      "query": "开始一段全新的冒险",
+      "expected_id": "ui-new-game",
+      "rank": 1,
+      "top_match_id": "ui-new-game",
+      "top_match_score": 0.436,
+      "translation": "新游戏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "保存我的游戏进度",
+      "expected_id": "ui-save-game",
+      "rank": 1,
+      "top_match_id": "ui-save-game",
+      "top_match_score": 0.7326,
+      "translation": "保存游戏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "读取之前的存档",
+      "expected_id": "ui-load-game",
+      "rank": null,
+      "top_match_id": "ui-paste",
+      "top_match_score": 0.5393,
+      "translation": "粘贴",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "退出游戏回到桌面",
+      "expected_id": "ui-quit",
+      "rank": 1,
+      "top_match_id": "ui-quit",
+      "top_match_score": 0.6604,
+      "translation": "退出游戏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "查看我的法力值",
+      "expected_id": "hud-mana",
+      "rank": 4,
+      "top_match_id": "item-equip",
+      "top_match_score": 0.4706,
+      "translation": "装备",
+      "qa_passed": false,
+      "failed_checks": [
+        "required_term_used"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "打开物品栏",
+      "expected_id": "hud-inventory",
+      "rank": 5,
+      "top_match_id": "item-equip",
+      "top_match_score": 0.5845,
+      "translation": "装备",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "我们赢得了这场战斗",
+      "expected_id": "combat-victory",
+      "rank": 1,
+      "top_match_id": "combat-victory",
+      "top_match_score": 0.6687,
+      "translation": "胜利!",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "在战斗中喝下生命药水",
+      "expected_id": "item-health-potion",
+      "rank": 1,
+      "top_match_id": "item-health-potion",
+      "top_match_score": 0.5377,
+      "translation": "生命药水",
+      "qa_passed": false,
+      "failed_checks": [
+        "required_term_used"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "新的任务已经接受",
+      "expected_id": "dlg-004",
+      "rank": null,
+      "top_match_id": "ui-new-game@th",
+      "top_match_score": 0.4834,
+      "translation": "เกมใหม่",
+      "qa_passed": false,
+      "failed_checks": [
+        "placeholder_preservation"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "屏幕画面太暗了",
+      "expected_id": "ui-brightness",
+      "rank": 7,
+      "top_match_id": "ui-fullscreen",
+      "top_match_score": 0.4781,
+      "translation": "全屏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    }
+  ]
+}

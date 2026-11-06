@@ -1,0 +1,574 @@
+{
+  "config": "baseline",
+  "kind": "retrieval",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "collection": "tm",
+  "provider": "mock",
+  "llm_model": null,
+  "llm_base_url": null,
+  "prompt_version": "1.0",
+  "options": {
+    "target_lang": null,
+    "hybrid": false,
+    "rrf_k": 60
+  },
+  "gold_file": "gold.jsonl",
+  "cross_language": false,
+  "n_units": 133,
+  "n_gold": 41,
+  "k_values": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "recall_at_k": {
+    "1": 0.5122,
+    "3": 0.6829,
+    "5": 0.7317,
+    "10": 0.8049
+  },
+  "mrr": 0.6146,
+  "qa_pass_rate": 0.8049,
+  "qa_by_check": {
+    "character_limit": 1.0,
+    "forbidden_term_absent": 1.0,
+    "number_preservation": 1.0,
+    "placeholder_preservation": 0.9024,
+    "required_term_used": 0.8537,
+    "tag_preservation": 1.0
+  },
+  "qa_failures": [
+    {
+      "query": "check my mana pool",
+      "expected_id": "hud-mana",
+      "failed_checks": [
+        "required_term_used"
+      ]
+    },
+    {
+      "query": "heal my wounds",
+      "expected_id": "combat-healed",
+      "failed_checks": [
+        "placeholder_preservation"
+      ]
+    },
+    {
+      "query": "how long until my skill is ready again",
+      "expected_id": "combat-cooldown",
+      "failed_checks": [
+        "placeholder_preservation",
+        "required_term_used"
+      ]
+    },
+    {
+      "query": "use a red potion in battle",
+      "expected_id": "item-health-potion",
+      "failed_checks": [
+        "required_term_used"
+      ]
+    },
+    {
+      "query": "restore my magic resource",
+      "expected_id": "item-mana-crystal",
+      "failed_checks": [
+        "required_term_used"
+      ]
+    },
+    {
+      "query": "this item needs a higher level",
+      "expected_id": "item-level-required",
+      "failed_checks": [
+        "placeholder_preservation"
+      ]
+    },
+    {
+      "query": "welcome message shown to a new player",
+      "expected_id": "dlg-001",
+      "failed_checks": [
+        "placeholder_preservation",
+        "required_term_used"
+      ]
+    },
+    {
+      "query": "a checkpoint was reached while exploring",
+      "expected_id": "dlg-016",
+      "failed_checks": [
+        "required_term_used"
+      ]
+    }
+  ],
+  "bad_json_count": 0,
+  "wall_time_seconds": 3.89,
+  "items": [
+    {
+      "query": "start a brand new playthrough",
+      "expected_id": "ui-new-game",
+      "rank": 1,
+      "top_match_id": "ui-new-game",
+      "top_match_score": 0.6391,
+      "translation": "新游戏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "resume my saved adventure",
+      "expected_id": "ui-continue",
+      "rank": 2,
+      "top_match_id": "hud-xp",
+      "top_match_score": 0.5884,
+      "translation": "经验值",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "open a previous save file",
+      "expected_id": "ui-load-game",
+      "rank": 6,
+      "top_match_id": "ui-save-game@th",
+      "top_match_score": 0.3436,
+      "translation": "บันทึกเกม",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "store my progress right now",
+      "expected_id": "ui-save-game",
+      "rank": 10,
+      "top_match_id": "dlg-010",
+      "top_match_score": 0.4959,
+      "translation": "解锁成就:%s",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "change the game options",
+      "expected_id": "ui-settings",
+      "rank": null,
+      "top_match_id": "ui-new-game@zh-TW",
+      "top_match_score": 0.6562,
+      "translation": "新遊戲",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "exit to the desktop",
+      "expected_id": "ui-quit",
+      "rank": 2,
+      "top_match_id": "ui-quit@zh-TW",
+      "top_match_score": 0.4528,
+      "translation": "離開遊戲",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "go back to the previous screen",
+      "expected_id": "ui-back",
+      "rank": 1,
+      "top_match_id": "ui-back",
+      "top_match_score": 0.5202,
+      "translation": "返回",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "accept this action",
+      "expected_id": "ui-confirm",
+      "rank": 3,
+      "top_match_id": "ui-continue",
+      "top_match_score": 0.5084,
+      "translation": "继续游戏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "abort the current action",
+      "expected_id": "ui-cancel",
+      "rank": 1,
+      "top_match_id": "ui-cancel",
+      "top_match_score": 0.5538,
+      "translation": "取消",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "pick how hard the game is",
+      "expected_id": "ui-difficulty",
+      "rank": null,
+      "top_match_id": "ui-new-game",
+      "top_match_score": 0.5001,
+      "translation": "新游戏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "choose the easiest mode",
+      "expected_id": "ui-easy",
+      "rank": 4,
+      "top_match_id": "ui-settings",
+      "top_match_score": 0.4735,
+      "translation": "设置",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "turn on full screen display",
+      "expected_id": "ui-fullscreen",
+      "rank": 1,
+      "top_match_id": "ui-fullscreen",
+      "top_match_score": 0.808,
+      "translation": "全屏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "adjust the screen brightness",
+      "expected_id": "ui-brightness",
+      "rank": 1,
+      "top_match_id": "ui-brightness",
+      "top_match_score": 0.5473,
+      "translation": "亮度",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "change the display language",
+      "expected_id": "ui-language",
+      "rank": 2,
+      "top_match_id": "ui-fullscreen",
+      "top_match_score": 0.4311,
+      "translation": "全屏",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "show subtitles during cutscenes",
+      "expected_id": "ui-subtitles",
+      "rank": 1,
+      "top_match_id": "ui-subtitles",
+      "top_match_score": 0.8034,
+      "translation": "字幕",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "how much health do I have left",
+      "expected_id": "hud-hp",
+      "rank": 1,
+      "top_match_id": "hud-hp",
+      "top_match_score": 0.547,
+      "translation": "生命值",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "check my mana pool",
+      "expected_id": "hud-mana",
+      "rank": 4,
+      "top_match_id": "ui-new-game",
+      "top_match_score": 0.3048,
+      "translation": "新游戏",
+      "qa_passed": false,
+      "failed_checks": [
+        "required_term_used"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "am I out of stamina",
+      "expected_id": "hud-stamina",
+      "rank": 1,
+      "top_match_id": "hud-stamina",
+      "top_match_score": 0.7365,
+      "translation": "体力",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "how many gold coins do I have",
+      "expected_id": "hud-gold",
+      "rank": 1,
+      "top_match_id": "hud-gold",
+      "top_match_score": 0.6466,
+      "translation": "金币",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "open my bag",
+      "expected_id": "hud-inventory",
+      "rank": null,
+      "top_match_id": "ui-easy",
+      "top_match_score": 0.442,
+      "translation": "简单",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "view the world map",
+      "expected_id": "hud-map",
+      "rank": 2,
+      "top_match_id": "hud-map@zh-TW",
+      "top_match_score": 0.7084,
+      "translation": "地圖",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "show my quest list",
+      "expected_id": "hud-quest-log",
+      "rank": 1,
+      "top_match_id": "hud-quest-log",
+      "top_match_score": 0.5742,
+      "translation": "任务日志",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "perform a basic attack",
+      "expected_id": "combat-attack",
+      "rank": 1,
+      "top_match_id": "combat-attack",
+      "top_match_score": 0.7922,
+      "translation": "攻击",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "guard against the next hit",
+      "expected_id": "combat-defend",
+      "rank": 2,
+      "top_match_id": "combat-attack",
+      "top_match_score": 0.5354,
+      "translation": "攻击",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "dodge out of the way",
+      "expected_id": "combat-dodge",
+      "rank": 1,
+      "top_match_id": "combat-dodge",
+      "top_match_score": 0.7188,
+      "translation": "闪避",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "land a critical strike",
+      "expected_id": "combat-critical",
+      "rank": 1,
+      "top_match_id": "combat-critical",
+      "top_match_score": 0.4977,
+      "translation": "暴击!",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "how much damage did I deal",
+      "expected_id": "combat-damage",
+      "rank": 1,
+      "top_match_id": "combat-damage",
+      "top_match_score": 0.7377,
+      "translation": "造成 %d 点伤害",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "heal my wounds",
+      "expected_id": "combat-healed",
+      "rank": null,
+      "top_match_id": "item-health-potion",
+      "top_match_score": 0.4409,
+      "translation": "生命药水",
+      "qa_passed": false,
+      "failed_checks": [
+        "placeholder_preservation"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "how long until my skill is ready again",
+      "expected_id": "combat-cooldown",
+      "rank": null,
+      "top_match_id": "combat-ultimate",
+      "top_match_score": 0.451,
+      "translation": "终极技能",
+      "qa_passed": false,
+      "failed_checks": [
+        "placeholder_preservation",
+        "required_term_used"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "we won the fight",
+      "expected_id": "combat-victory",
+      "rank": 1,
+      "top_match_id": "combat-victory",
+      "top_match_score": 0.5891,
+      "translation": "胜利!",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "what happens when I die",
+      "expected_id": "combat-defeat",
+      "rank": 1,
+      "top_match_id": "combat-defeat",
+      "top_match_score": 0.2964,
+      "translation": "你已阵亡",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "use a red potion in battle",
+      "expected_id": "item-health-potion",
+      "rank": 1,
+      "top_match_id": "item-health-potion",
+      "top_match_score": 0.5737,
+      "translation": "生命药水",
+      "qa_passed": false,
+      "failed_checks": [
+        "required_term_used"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "restore my magic resource",
+      "expected_id": "item-mana-crystal",
+      "rank": null,
+      "top_match_id": "item-mana-restore",
+      "top_match_score": 0.4693,
+      "translation": "恢复 %d 点法力",
+      "qa_passed": false,
+      "failed_checks": [
+        "required_term_used"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "buy something at the shop",
+      "expected_id": "item-buy",
+      "rank": 1,
+      "top_match_id": "item-buy",
+      "top_match_score": 0.6996,
+      "translation": "购买",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "put this sword on my character",
+      "expected_id": "item-equip",
+      "rank": null,
+      "top_match_id": "item-emberbrand-sword",
+      "top_match_score": 0.7074,
+      "translation": "烬誓剑",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "my bag is completely full",
+      "expected_id": "item-inventory-full",
+      "rank": 1,
+      "top_match_id": "item-inventory-full",
+      "top_match_score": 0.4273,
+      "translation": "物品栏已满",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "this item needs a higher level",
+      "expected_id": "item-level-required",
+      "rank": null,
+      "top_match_id": "combat-use-item",
+      "top_match_score": 0.5435,
+      "translation": "使用物品",
+      "qa_passed": false,
+      "failed_checks": [
+        "placeholder_preservation"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "welcome message shown to a new player",
+      "expected_id": "dlg-001",
+      "rank": 10,
+      "top_match_id": "ui-new-game@th",
+      "top_match_score": 0.6345,
+      "translation": "เกมใหม่",
+      "qa_passed": false,
+      "failed_checks": [
+        "placeholder_preservation",
+        "required_term_used"
+      ],
+      "bad_json": false
+    },
+    {
+      "query": "the quest was accepted",
+      "expected_id": "dlg-004",
+      "rank": 1,
+      "top_match_id": "dlg-004",
+      "top_match_score": 0.6315,
+      "translation": "已接受任务:%s",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "popup when an achievement is unlocked",
+      "expected_id": "dlg-010",
+      "rank": 1,
+      "top_match_id": "dlg-010",
+      "top_match_score": 0.636,
+      "translation": "解锁成就:%s",
+      "qa_passed": true,
+      "failed_checks": [],
+      "bad_json": false
+    },
+    {
+      "query": "a checkpoint was reached while exploring",
+      "expected_id": "dlg-016",
+      "rank": 2,
+      "top_match_id": "dlg-016@zh-TW",
+      "top_match_score": 0.8686,
+      "translation": "已到達檢查點",
+      "qa_passed": false,
+      "failed_checks": [
+        "required_term_used"
+      ],
+      "bad_json": false
+    }
+  ]
+}

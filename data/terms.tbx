@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx type="TBX" style="dca">
+  <tbxHeader>
+    <fileDesc>
+      <titleStmt><title>Emberveil Legends term base (synthetic demo data)</title></titleStmt>
+      <sourceDesc><p>Invented terms for the tm-rag-copilot demo. No real game or company data.</p></sourceDesc>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <termEntry id="T01">
+        <langSet xml:lang="en"><tig><term>Emberveil Legends</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>烬堇传说</term><termNote type="forbiddenTerm">艾博维尔传说</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T02">
+        <langSet xml:lang="en"><tig><term>Hollow King</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>虚王</term><termNote type="forbiddenTerm">空王</termNote><termNote type="forbiddenTerm">虚无之王</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T03">
+        <langSet xml:lang="en"><tig><term>Mana</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>法力</term><termNote type="forbiddenTerm">魔力</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T04">
+        <langSet xml:lang="en"><tig><term>Mana Crystal</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>法力水晶</term><termNote type="forbiddenTerm">魔力水晶</termNote><termNote type="forbiddenTerm">魔晶</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T05">
+        <langSet xml:lang="en"><tig><term>Stamina</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>体力</term><termNote type="forbiddenTerm">精力</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T06">
+        <langSet xml:lang="en"><tig><term>Health</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>生命值</term><termNote type="forbiddenTerm">血量</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T07">
+        <langSet xml:lang="en"><tig><term>Gold</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>金币</term><termNote type="forbiddenTerm">金子</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T08">
+        <langSet xml:lang="en"><tig><term>Ember Gems</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>烬石</term><termNote type="forbiddenTerm">余烬宝石</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T09">
+        <langSet xml:lang="en"><tig><term>Star Shard</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>星屑</term><termNote type="forbiddenTerm">星星碎片</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T10">
+        <langSet xml:lang="en"><tig><term>Phoenix Feather</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>凤羽</term><termNote type="forbiddenTerm">凤凰羽毛</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T11">
+        <langSet xml:lang="en"><tig><term>Emberbrand Sword</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>烬誓剑</term><termNote type="forbiddenTerm">余烬之剑</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T12">
+        <langSet xml:lang="en"><tig><term>Rune of Warding</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>护身符文</term><termNote type="forbiddenTerm">守护符文</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T13">
+        <langSet xml:lang="en"><tig><term>Elixir</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>灵露</term><termNote type="forbiddenTerm">仙丹</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T14">
+        <langSet xml:lang="en"><tig><term>Health Potion</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>生命药水</term><termNote type="forbiddenTerm">红药水</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T15">
+        <langSet xml:lang="en"><tig><term>Fast Travel</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>快速旅行</term><termNote type="forbiddenTerm">瞬移</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T16">
+        <langSet xml:lang="en"><tig><term>Checkpoint</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>检查点</term><termNote type="forbiddenTerm">存档点</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T17">
+        <langSet xml:lang="en"><tig><term>Critical Hit</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>暴击</term><termNote type="forbiddenTerm">会心一击</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T18">
+        <langSet xml:lang="en"><tig><term>Combo</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>连击</term><termNote type="forbiddenTerm">连招</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T19">
+        <langSet xml:lang="en"><tig><term>Cooldown</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>冷却</term><termNote type="forbiddenTerm">CD</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T20">
+        <langSet xml:lang="en"><tig><term>Respawn</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>重生</term><termNote type="forbiddenTerm">复活</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T21">
+        <langSet xml:lang="en"><tig><term>Loot</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>战利品</term><termNote type="forbiddenTerm">掉落物</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T22">
+        <langSet xml:lang="en"><tig><term>Boss</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>首领</term><termNote type="forbiddenTerm">老板</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T23">
+        <langSet xml:lang="en"><tig><term>Dungeon</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>地下城</term><termNote type="forbiddenTerm">地牢</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T24">
+        <langSet xml:lang="en"><tig><term>Raid</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>团队副本</term><termNote type="forbiddenTerm">大型副本</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T25">
+        <langSet xml:lang="en"><tig><term>Guild</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>公会</term><termNote type="forbiddenTerm">行会</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T26">
+        <langSet xml:lang="en"><tig><term>Clan</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>部族</term><termNote type="forbiddenTerm">家族</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T27">
+        <langSet xml:lang="en"><tig><term>Reputation</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>声望</term><termNote type="forbiddenTerm">名声</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T28">
+        <langSet xml:lang="en"><tig><term>Mount</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>坐骑</term><termNote type="forbiddenTerm">骑乘兽</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T29">
+        <langSet xml:lang="en"><tig><term>Achievement</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>成就</term><termNote type="forbiddenTerm">奖杯</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T30">
+        <langSet xml:lang="en"><tig><term>New Game+</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>新周目</term><termNote type="forbiddenTerm">二周目</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T31">
+        <langSet xml:lang="en"><tig><term>NPC</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>非玩家角色</term><termNote type="forbiddenTerm">托管角色</termNote></tig></langSet>
+      </termEntry>
+      <termEntry id="T32">
+        <langSet xml:lang="en"><tig><term>PvP</term></tig></langSet>
+        <langSet xml:lang="zh-CN"><tig><term>玩家对战</term><termNote type="forbiddenTerm">玩家互殴</termNote></tig></langSet>
+      </termEntry>
+    </body>
+  </text>
+</tbx>
