@@ -1,5 +1,7 @@
 # tm-rag-copilot
 
+**[Read the wiki](https://github.com/dboles99/tm-rag-copilot/wiki)** for how it works, the evidence, the design decisions and the limits.
+
 A small, honest, fully offline demo of retrieval-augmented translation: it embeds a synthetic translation memory and term base, retrieves the closest segments by meaning, translates with a local model or a deterministic mock, and checks every output with deterministic QA, then measures itself on a gold set.
 
 97.6% of translations passed automated QA with a local Qwen model, against 80.5% for the retrieval-only baseline.
